@@ -6,7 +6,7 @@ export class checkoutPage extends basePage {
         super(page);
         this.placeOrderBtnLocator = page.locator("#cart_items .btn.btn-default.check_out");
         this.modalLocator = page.locator('#checkoutModal');
-        //this.checkoutModal = page.locator('#checkoutModal');
+        
 
     }
 
@@ -17,9 +17,6 @@ export class checkoutPage extends basePage {
             await this.modalLocator.waitFor({ state: 'hidden' });
         }
 
-        //await this.checkoutModal.waitFor({ state: 'hidden' });
-
-        // await this.placeOrderBtnLocator.scrollIntoViewIfNeeded();
         await this.click(this.placeOrderBtnLocator);
     }
 
