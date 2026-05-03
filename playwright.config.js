@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -32,8 +33,8 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     baseURL: 'https://automationexercise.com/',
     //storageState: 'auth.json',
-    trace: 'on-first-retry',
-    headless: true,
+    trace: process.env.CI ? 'on-first-retry' : 'on',
+    headless: process.env.CI ? true : false,
   },
 
   /* Configure projects for major browsers */
