@@ -4,7 +4,8 @@ import { cartPage } from '../WebPages/cartPage';
 import { checkoutPage } from '../WebPages/checkoutPage';
 import { basePage } from '../WebPages/basePage';
 import { generatePaymentData } from '../utils/signupData';
-import { generateKey } from 'node:crypto';
+
+test.use({ storageState: 'auth.json' });
 
 test('placing an order', async ({ page }) => {
 

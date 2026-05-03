@@ -4,6 +4,8 @@ import {signupPage} from '../WebPages/signupPage';
 import { loginPage } from '../WebPages/loginPage';
 import { generateUserData } from '../utils/signupData';
 
+test.use({storageState: undefined});
+
 test('Sign Up and Login flow', async({page})=>
 {
     
@@ -29,7 +31,7 @@ test('Sign Up and Login flow', async({page})=>
 
     await login.enterLoginCredentials(user.email, user.password);
     await login.clickLogin();
-    await page.pause();
+    
 
 
 })

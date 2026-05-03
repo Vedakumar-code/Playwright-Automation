@@ -31,7 +31,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     baseURL: 'https://automationexercise.com/',
-    storageState: 'auth.json',
+    //storageState: 'auth.json',
     trace: 'on-first-retry',
     headless: false,
   },
