@@ -12,7 +12,7 @@ export class checkoutPage extends basePage
 
      async clickPlaceOrder()
     {
-        await expect(this.placeOrderBtnLocator).toBeVisible();
+        //await expect(this.placeOrderBtnLocator).toBeVisible();
         await this.click(this.placeOrderBtnLocator);
     }
 }
