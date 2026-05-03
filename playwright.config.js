@@ -33,7 +33,7 @@ export default defineConfig({
     baseURL: 'https://automationexercise.com/',
     //storageState: 'auth.json',
     trace: 'on-first-retry',
-    headless: false,
+    headless: true,
   },
 
   /* Configure projects for major browsers */
