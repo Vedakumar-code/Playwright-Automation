@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { productsPage } from '../WebPages/productsPage';
 import { cartPage } from '../WebPages/cartPage';
 import { checkoutPage } from '../WebPages/checkoutPage';
+import { placeOrderPage } from '../WebPages/placeOrderPage';
 import { basePage } from '../WebPages/basePage';
 import { generatePaymentData } from '../utils/signupData';
 
@@ -13,7 +14,8 @@ test('placing an order', async ({ page }) => {
 
     const productspage = new productsPage(page);
     const cartpage = new cartPage(page);
-    const checkoutpage = new checkoutPage(page)
+    const checkoutpage = new checkoutPage(page);
+    const placeorderpage = new placeOrderPage(page)
     const paymentDetails = generatePaymentData();
 
     await productspage.navigate("https://automationexercise.com/products");
@@ -26,10 +28,10 @@ test('placing an order', async ({ page }) => {
     await cartpage.verifyProductInCart();
     await cartpage.validatePrice();
     await cartpage.clickProceedToCheckout();
-    await cartpage.clickPlaceOrder();
-
-    await checkoutpage.enterPaymentDetails(paymentDetails);
     await checkoutpage.clickPlaceOrder();
-    await checkoutpage.validateSuccessOrderMsg();
+
+    await placeorderpage.enterPaymentDetails(paymentDetails);
+    await placeorderpage.clickPlaceOrder();
+    await placeorderpage.validateSuccessOrderMsg();
 
 })
