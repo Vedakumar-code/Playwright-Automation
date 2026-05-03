@@ -6,7 +6,7 @@ export class checkoutPage extends basePage
     constructor (page)
     {
         super(page);
-        this.placeOrderBtnLocator = page.locator("//a[normalize-space()='Place Order']");
+        this.placeOrderBtnLocator = page.locator("a.btn.btn-default.check_out");
         
     }
 
