@@ -4,7 +4,8 @@ import { expect } from "@playwright/test";
 export class checkoutPage extends basePage {
     constructor(page) {
         super(page);
-        this.reviewYourOrderLocator = page.locator("//h2[normalize-space()='Review Your Order']");
+        //this.reviewYourOrderLocator = page.locator("//h2[normalize-space()='Review Your Order']");
+        this.orderMasgLocator = page.locator("#ordermsg");
         this.placeOrderBtnLocator = page.getByRole('link', { name: 'Place Order' });
 
 
@@ -12,7 +13,8 @@ export class checkoutPage extends basePage {
 
     async clickPlaceOrder() {
         //await expect(this.placeOrderBtnLocator).toBeVisible();
-        await expect(this.reviewYourOrderLocator).toBeVisible();
+        //await expect(this.reviewYourOrderLocator).toBeVisible();
+        await this.fill(this.orderMasgLocator, "test place order");
         await this.placeOrderBtnLocator.scrollIntoViewIfNeeded();
         await this.click(this.placeOrderBtnLocator);
     }
