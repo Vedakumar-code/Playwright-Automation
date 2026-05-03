@@ -7,6 +7,8 @@ export function generateUserData()
         name: "vedakumar",
         email: `test${timeStamp}@gmail.com`,
         password: `test${timeStamp}`,
+        loginEmail: "test8861@gmail.com",
+        loginPassword: "Test@8861",
         day: "1",
         month: "January",
         year: "2000",
@@ -20,6 +22,18 @@ export function generateUserData()
         mobileNumber: "1234567890"
 
 
+    };
+
+}
+
+export function generatePaymentData() {
+
+    return {
+        nameOnCard: "Vedakumar",
+        cardNumber: "123456789098", 
+        cvcNumber: "123",
+        month: "07",
+        year: "2028"
     };
 
 }
