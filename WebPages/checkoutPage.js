@@ -13,7 +13,8 @@ export class checkoutPage extends basePage {
     async clickPlaceOrder() {
 
         if (await this.modalLocator.isVisible()) {
-            await this.page.locator('a[href="/login"]').click();
+            await this.modalLocator.getByRole('button', { name: 'Continue On Cart' }).click();
+            await this.modalLocator.waitFor({ state: 'hidden' });
         }
 
         //await this.checkoutModal.waitFor({ state: 'hidden' });
