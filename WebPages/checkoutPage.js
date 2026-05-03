@@ -6,8 +6,7 @@ export class checkoutPage extends basePage {
         super(page);
         this.placeOrderBtnLocator = page.locator("#cart_items .btn.btn-default.check_out");
         this.modalLocator = page.locator('#checkoutModal');
-        
-
+    
     }
 
     async clickPlaceOrder() {
